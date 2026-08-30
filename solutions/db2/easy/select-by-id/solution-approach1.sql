@@ -7,6 +7,12 @@
 -- Language    db2
 -- Status      Accepted
 -- Submitted   2026-08-30, 05:43 p.m.
+-- Technique   select-where-clause
+-- Time        O(N)
+-- Space       O(1)
+-- Insight     The query filters the CITY table by matching the ID column against the integer literal 1661.
+-- Interview   Before: "How do I retrieve a specific record by its primary key?" After: "Use the SELECT * FROM table WHERE ID = value syntax. This performs an O(N) linear scan unless the ID column is indexed, which would reduce the complexity to O(log N) or O(1)."
+-- Pitfalls    (1) Failing to use the correct column name ID as specified in the schema.  (2) Using quotes around the integer 1661 which may cause unnecessary type conversion depending on the database engine.
 -- ──────────────────────────────────────────────────
 
 
