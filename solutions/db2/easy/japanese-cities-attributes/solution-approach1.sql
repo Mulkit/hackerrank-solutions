@@ -7,6 +7,12 @@
 -- Language    db2
 -- Status      Accepted
 -- Submitted   2026-08-30, 05:43 p.m.
+-- Technique   select-star-where-clause
+-- Time        O(N)
+-- Space       O(N)
+-- Insight     The query retrieves all columns for rows matching the specific country code filter.
+-- Interview   Before: "How do I filter rows in SQL?" After: "Use the WHERE clause to restrict results to the 'JPN' country code. This operation runs in O(N) time as it performs a full table scan to identify all matching records."
+-- Pitfalls    (1) Failing to use single quotes for the string literal 'JPN' will cause a syntax error.  (2) Assuming the table contains columns other than those defined in the schema may lead to unexpected output.
 -- ──────────────────────────────────────────────────
 
 
