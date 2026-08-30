@@ -7,6 +7,12 @@
 -- Language    db2
 -- Status      Accepted
 -- Submitted   2026-08-30, 10:20 p.m.
+-- Technique   regex-like-string-filtering
+-- Time        O(N)
+-- Space       O(N)
+-- Insight     The query filters city names by checking if the first and last characters belong to the set of vowels using case-insensitive string functions and ensures uniqueness via the DISTINCT keyword.
+-- Interview   Before: "How would you filter strings based on specific character positions?" After: "I use LEFT and RIGHT functions combined with an IN clause to validate boundary characters. This approach runs in O(N) time, where N is the number of rows, and effectively handles the requirement for unique results using DISTINCT."
+-- Pitfalls    (1) Failing to use DISTINCT results in duplicate city names if multiple stations share the same name.  (2) Neglecting the LOWER function causes the query to miss city names starting or ending with uppercase vowels.  (3) Assuming the database is case-insensitive by default can lead to incorrect filtering if the collation is case-sensitive.
 -- ──────────────────────────────────────────────────
 
 
