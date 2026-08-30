@@ -7,6 +7,12 @@
 -- Language    db2
 -- Status      Accepted
 -- Submitted   2026-08-30, 09:39 p.m.
+-- Technique   pattern-matching-distinct-filter
+-- Time        O(N)
+-- Space       O(N)
+-- Insight     The query filters unique city names by checking if the first character matches any vowel using the SQL LIKE operator with wildcard patterns.
+-- Interview   Before: "How would you extract unique cities starting with specific characters?" After: "I used the DISTINCT keyword to remove duplicates and the LIKE operator with wildcard patterns to identify vowels, resulting in O(N) time complexity to scan the table."
+-- Pitfalls    (1) Failing to use the DISTINCT keyword results in duplicate city names in the output.  (2) Omitting the wildcard character in the LIKE pattern causes the query to match only single-character city names.  (3) Case sensitivity in some SQL dialects might require explicit handling if the data contains lowercase vowels.
 -- ──────────────────────────────────────────────────
 
 
