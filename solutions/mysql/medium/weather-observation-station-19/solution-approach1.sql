@@ -7,6 +7,12 @@
 -- Language    mysql
 -- Status      Accepted
 -- Submitted   2026-09-12, 09:29 p.m.
+-- Technique   aggregate-function-euclidean-distance
+-- Time        O(N)
+-- Space       O(1)
+-- Insight     The query calculates the Euclidean distance between two points defined by the extreme values of latitude and longitude using standard SQL aggregate functions.
+-- Interview   Before: "How would you calculate the distance between two points defined by min/max coordinates?" After: "I used aggregate functions to find the bounds in O(N) time, then applied the Euclidean distance formula with ROUND to meet the 4-decimal requirement."
+-- Pitfalls    (1) Failing to use the ROUND function results in default precision, which violates the 4-decimal digit requirement.  (2) Incorrectly pairing LAT_N and LONG_W bounds by using separate subqueries instead of aggregate functions on the full table.
 -- ──────────────────────────────────────────────────
 
 /*
